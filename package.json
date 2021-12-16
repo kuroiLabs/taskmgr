@@ -1,7 +1,7 @@
 {
-	"name": "@kuroi/worker",
+	"name": "@kuroi/taskmgr",
 	"version": "0.1.0",
-	"description": "Web Worker multithreading service for JavaScript web applications",
+	"description": "A lightweight JS package for managing async tasks through queues and Web Worker threads",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kuroiLabs/worker.git"
+		"url": "git+https://github.com/kuroiLabs/taskmgr.git"
 	},
 	"keywords": [
 		"web",
