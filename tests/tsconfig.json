@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+	"declaration": true,
+	"declarationMap": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "typeRoots": [
+      "node_modules/@kuroi/numeric/types"
+    ],
+    "outDir": "dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true
+  }
+}

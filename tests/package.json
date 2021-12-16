@@ -1,0 +1,24 @@
+{
+  "name": "@kuroi/worker-test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "dependencies": {
+    "@kuroi/syringe": "^1.0.4",
+    "rxjs": "^7.4.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.4.0",
+    "http-server": "^14.0.0",
+    "shx": "^0.3.3",
+    "ts-loader": "^8.3.0",
+    "typescript": "^4.4.4",
+    "webpack": "4.42.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build": "shx rm -rf ./dist && webpack",
+	"start": "http-server ./dist",
+	"build:start": "npm run build && npm run start"
+  }
+}
