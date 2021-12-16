@@ -1,0 +1,33 @@
+{
+  "name": "@kuroi/worker",
+  "version": "0.1.0",
+  "description": "Web Worker multithreading service for JavaScript web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuroiLabs/worker.git"
+  },
+  "keywords": [
+    "web",
+    "worker",
+    "multithreading",
+    "queue",
+    "jobs"
+  ],
+  "author": "kuro <kuro@kuroi.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuroiLabs/worker/issues"
+  },
+  "homepage": "https://github.com/kuroiLabs/worker#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "rxjs": "^7.4.0"
+  }
+}
