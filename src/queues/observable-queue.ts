@@ -15,7 +15,7 @@ export class ObservableQueue<T> implements IQueue<Observable<T>> {
 
 	private _currentTask$!: Observable<T>;
 
-	dequeue(): Observable<T> {
+	public dequeue(): Observable<T> {
 		if (!this._queue$) {
 			this._queue$ = this._tasks$.pipe(
 				concatMap(_task$ => {
@@ -32,12 +32,16 @@ export class ObservableQueue<T> implements IQueue<Observable<T>> {
 		return this._queue$;
 	}
 
-	enqueue(task: Observable<T>): void {
+	public enqueue(task: Observable<T>): void {
+		if (this.max && this.count >= this.max) {
+			console.error("ObservableQueue full!");
+			return;
+		}
 		this._tasks$.next(task);
 		this.count++;
 	}
 
-	peek(): Observable<T> {
+	public peek(): Observable<T> {
 		return this._currentTask$.pipe(take(1));
 	}
 

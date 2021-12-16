@@ -14,7 +14,7 @@ export class Queue<T> implements IQueue<T> {
 			this.max = 0;
 	}
 
-	dequeue(): T | null {
+	public dequeue(): T | null {
 		if (this._first) {
 			const _value = this._first.value;
 			this._first = this._first.next;
@@ -24,7 +24,11 @@ export class Queue<T> implements IQueue<T> {
 		return null;
 	}
 
-	enqueue(value: T): void {
+	public enqueue(value: T): void {
+		if (this.max && this.count >= this.max) {
+			console.error("Queue is full!");
+			return;
+		}
 		const _entry: IQueueEntry<T> = { value };
 		this._last = this._first ?
 			this._last.next = _entry : this._first = _entry;
@@ -32,7 +36,7 @@ export class Queue<T> implements IQueue<T> {
 		this.count++;
 	}
 
-	peek(): T | null {
+	public peek(): T | null {
 		return this._first?.value || null;
 	}
 
