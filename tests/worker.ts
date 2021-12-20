@@ -1,6 +1,6 @@
 import { Queue } from "../src/queues";
-
-const tasks = new Queue<() => Promise<number>>();
+type Task = () => Promise<number>;
+const tasks = new Queue<Task>();
 let busy = false;
 
 const main = (delay: number) => {
