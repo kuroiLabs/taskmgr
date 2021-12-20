@@ -5,4 +5,5 @@ export interface IWorkerThread<T = any> {
 	worker: Worker;
 	url: string;
 	stream: ReplaySubject<T>
+	terminal: boolean;
 }
