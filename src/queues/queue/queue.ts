@@ -5,9 +5,9 @@ export class Queue<T> implements IQueue<T> {
 
 	public count: number = 0;
 
-	private _first?: IQueueEntry<T>
+	protected _first?: IQueueEntry<T>
 
-	private _last?: IQueueEntry<T>
+	protected _last?: IQueueEntry<T>
 
 	constructor(public max: number = 0) {
 		if (this.max < 0)
@@ -24,20 +24,29 @@ export class Queue<T> implements IQueue<T> {
 		return null;
 	}
 
-	public enqueue(value: T): void {
+	public enqueue(...values: T[]): boolean {
+		for (let i = 0; i < values.length; i++) {
+			if (!this._enqueue(values[i]))
+				return false;
+		}
+		return true;
+	}
+
+	public peek(): T | null {
+		return this._first?.value || null;
+	}
+
+	private _enqueue(value: T): boolean {
 		if (this.max && this.count >= this.max) {
 			console.error("Queue is full!");
-			return;
+			return false;
 		}
 		const _entry: IQueueEntry<T> = { value };
 		this._last = this._first ?
 			this._last.next = _entry : this._first = _entry;
 		
 		this.count++;
-	}
-
-	public peek(): T | null {
-		return this._first?.value || null;
+		return true;
 	}
 
 }
