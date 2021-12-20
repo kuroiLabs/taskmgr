@@ -1,4 +1,3 @@
-export * from "./observable-queue";
+export * from "./observable";
+export * from "./priority";
 export * from "./queue";
-export * from "./queue-entry.interface";
-export * from "./queue.interface";
